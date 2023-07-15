@@ -1,0 +1,45 @@
+body {
+    /* font-size: .875rem; */
+    align-items: center;
+    overflow-x: auto;
+}
+
+.label {
+    font-weight: 600;
+    color: #7A7575;
+    size: 14px;
+
+}
+
+.form {
+    border-color: #E3F9FF;
+}
+
+button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 100px;
+    font-weight: 700;
+    width: 100%;
+    background-color: #3AB7D7;
+    color: white;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    border: none;
+}
+
+.text-logo {
+    color: var(--primary, #3AB7D7);
+    font-family: Source Sans Pro;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+a:hover {
+    color: transparents;
+}

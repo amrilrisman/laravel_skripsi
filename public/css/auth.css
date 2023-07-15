@@ -1,0 +1,11 @@
+.bg-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.form-layout {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 50px;
+}
