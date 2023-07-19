@@ -1,8 +1,3 @@
-body {
-    /* font-size: .875rem; */
-    align-items: center;
-    overflow-x: auto;
-}
 
 .label {
     font-weight: 600;
@@ -40,6 +35,12 @@ a {
     line-height: normal;
 }
 
-a:hover {
-    color: transparents;
+.title-tab {
+    color: #3C4048;
+    font-family: Source Sans Pro;
+    font-size: 37px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.25px;
 }

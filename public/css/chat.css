@@ -1,0 +1,110 @@
+.card-chat {
+    background-color: white;
+    padding: 21px;
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-direction: row;
+    min-height: 80px;
+    position: relative;
+}
+
+.list-chat {
+    /* display: flex; */
+    overflow: hidden;
+    background-color: black;
+    border-right-color: #3C4048;
+}
+
+.text-title {
+    color: #3C4048;
+    max-lines: 1;
+    font-family: Source Sans Pro;
+    font-size: 17px;
+    font-style: normal;
+    max-lines: 1;
+    max-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+
+.text-description {
+    color: #B2B2B2;
+    font-family: Source Sans Pro;
+    max-lines: 1;
+    height: 15px;
+    max-lines: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.1px;
+}
+
+.list-detail-message {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.bubble-message {
+    border: 1px solid #B2B2B2;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    background-color: #3AB7D7;
+}
+
+.bubble-message::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.bubble-message img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.time-right {
+    float: right;
+    color: #3C4048;
+}
+
+.time-left {
+    float: left;
+    color: white;
+}
+
+
+.message-right {
+    float: right;
+    color: white;
+    font-family: Source Sans Pro;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1px;
+}
+
+.message-left {
+    float: left;
+    font-family: Source Sans Pro;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.1px;
+    color: #3C4048;
+}

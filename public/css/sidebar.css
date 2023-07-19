@@ -12,9 +12,7 @@ a {
     border: none;
 }
 
-a:active {
-    background-color: red;
-}
+
 
 main {
     display: flex;
@@ -93,6 +91,38 @@ main {
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
     background-color: #d2f4ea;
+}
+
+.side-aktif {
+    background-color: #3AB7D7;
+    padding-top: 16;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+    font-family: Source Sans Pro;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    align-content: center;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+
+.side-aktif a:hover {
+    color: white;
+}
+
+.side-nonaktif {
+    background-color: transparent;
+    padding: 16;
+    border-radius: 10px;
+    font-family: Source Sans Pro;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    color: #3C4048;
 }
 
 .scrollarea {

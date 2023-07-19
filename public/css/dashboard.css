@@ -1,0 +1,51 @@
+.card-progress {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    align-items: center;
+    border-radius: 8px;
+    background: #FCFCFC;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06), 0px 4px 6px -1px rgba(0, 0, 0, 0.10);
+
+}
+
+.title-card {
+    color: #4E4B66;
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+.value-card {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.text-table {
+    color: #000;
+
+    /* Body/Medium */
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 128.571% */
+    letter-spacing: 0.105px;
+}
+
+.headers-chat {
+    max-height: 77px;
+    min-height: 77px;
+    background-color: #3AB7D7;
+    padding-left: 16px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.title-header {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+
+}

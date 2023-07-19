@@ -29,17 +29,32 @@
             <h3 style="font-weight: 700">
                 Selamat Datang
             </h3>
+
             <p style="color:#B2B2B2">Masukan akun pegawai yang sudah terdaftar, mulai berikan pelayanan yang terbaik
             </p>
-            <form action="/beranda">
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ Session('success') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @elseif (session()->has('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{ Session('error') }}</strong>
+                    <form action="{{ back() }}">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </form>
+                </div>
+            @endif
+            <form action="/login" method="post">
+                @csrf
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label label mb-2">Email address</label>
-                    <input type="email" class="form-control form" id="exampleInputEmail1"
-                        aria-describedby="emailHelp">
+                    <label for="username" class="form-label label mb-2">Username</label>
+                    <input type="username" class="form-control form" id="username" name="username"
+                        aria-describedby="usernameHelp">
                 </div>
                 <div class="mb-2">
-                    <label for="exampleInputPassword1" class="form-label label mb-2">Password</label>
-                    <input type="password" class="form-control form" id="exampleInputPassword1">
+                    <label for="password" class="form-label label mb-2">Password</label>
+                    <input type="password" class="form-control form" id="password" name="password">
                 </div>
                 <div class="container m-0 p-0" style="text-align:right">
                     <a href="#" class="label" style="color: #3AB7D7">Lupa Katasandi? </a>
@@ -51,6 +66,9 @@
 
         </div>
     </div>
+
+
+
 
 </body>
 

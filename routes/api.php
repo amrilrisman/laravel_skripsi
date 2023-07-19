@@ -1,19 +1,20 @@
 <?php
 
+use App\Http\Controllers\ApiChatController;
+use App\Http\Controllers\ApiLoginController;
+use App\Http\Controllers\SocialitationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post("/login", [ApiLoginController::class, "login"]);
+
+Route::middleware("auth:sanctum")->post("/logout", [ApiLoginController::class, "logout"]);
+
+Route::middleware("auth:sanctum")->get("/pengumuman", [SocialitationsController::class, "data"]);
+
+Route::middleware("auth:sanctum")->post("/pengumuman", [SocialitationsController::class, "create"]);
+
+Route::middleware("auth:sanctum")->post("/message", [ApiChatController::class, "send"]);
+
+Route::middleware("auth:sanctum")->get("/message/{id}", [ApiChatController::class, "detail"]);
