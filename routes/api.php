@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiAdministrationDocument;
 use App\Http\Controllers\ApiChatController;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\SocialitationsController;
@@ -18,3 +19,8 @@ Route::middleware("auth:sanctum")->post("/pengumuman", [SocialitationsController
 Route::middleware("auth:sanctum")->post("/message", [ApiChatController::class, "send"]);
 
 Route::middleware("auth:sanctum")->get("/message/{id}", [ApiChatController::class, "detail"]);
+
+Route::middleware("auth:sanctum")->get("/administrasi/{id}", [ApiAdministrationDocument::class, "data"]);
+Route::middleware("auth:sanctum")->get("/administrasi/detail/{id}", [ApiAdministrationDocument::class, "detail"]);
+
+Route::middleware("auth:sanctum")->get("/account/{id}", [ApiLoginController::class, "account"]);

@@ -7,8 +7,8 @@
                 Pengajuan
             </h4>
             <div class="body-pengajuan ">
-                <div class="input-group mt-2" style="width: 50vh; margin-left:18px">
-                    <span class="input-group-text" style="background-color:transparent" id="basic-addon1">@</span>
+                <div class="input mt-2" style="width: 50vh; margin-left:18px">
+                    {{-- <span class="input-group-text" style="background-color:transparent" id="basic-addon1">@</span> --}}
                     <input type="text" class="form-control" placeholder="Search" aria-label="Username"
                         style="border-left: none" aria-describedby="basic-addon1">
                 </div>
@@ -25,81 +25,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-left">
-                            <td scope="row">Amril Rismanto Ichsan </td>
-                            <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                            <td>4/5</td>
-                            <td>23 Oct 2022</td>
-                            <td>
-                                <div class="card-status">
-                                    <p class="status-text">Verification RT/RW</p>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/beranda"
-                                    style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                            </td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Testing</td>
-                            <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                            <td>4/5</td>
-                            <td>23 Oct 2022</td>
-                            <td>
-                                <div class="card-status">
-                                    <p class="status-text">Verification RT/RW</p>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/beranda"
-                                    style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                            </td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Testing</td>
-                            <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                            <td>4/5</td>
-                            <td>23 Oct 2022</td>
-                            <td>
-                                <div class="card-status">
-                                    <p class="status-text">Verification RT/RW</p>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/beranda"
-                                    style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                            </td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Testing</td>
-                            <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                            <td>4/5</td>
-                            <td>23 Oct 2022</td>
-                            <td>
-                                <div class="card-status">
-                                    <p class="status-text">Verification RT/RW</p>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/beranda"
-                                    style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                            </td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Testing</td>
-                            <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                            <td>4/5</td>
-                            <td>23 Oct 2022</td>
-                            <td>
-                                <div class="card-status">
-                                    <p class="status-text">Verification RT/RW</p>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/beranda"
-                                    style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                            </td>
-                        </tr>
+                        @foreach ($data as $item)
+                            <tr class="text-left pl-1 pr-1">
+                                <td scope="row">{{ $item->title }} </td>
+                                <td>{{ $item->description }}</td>
+                                <td>4/5</td>
+                                <td>{{ $item->created_at->diffForHumans() }}</td>
+                                <td>
+                                    <div class="card-status">
+                                        <p class="status-text">Verification RT/RW</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="/pengajuan"
+                                        style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdministationDocumentsController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\DocumentController;
@@ -43,3 +44,5 @@ Route::get('/account', [AccountController::class, 'index']);
 
 Route::resource("/messager", ChatsController::class);
 Route::resource("/pengumumman", PengumumanController::class);
+
+Route::resource("/pengajuan", AdministationDocumentsController::class);

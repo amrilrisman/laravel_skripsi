@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\administation_documents;
 use App\Http\Requests\Storeadministation_documentsRequest;
 use App\Http\Requests\Updateadministation_documentsRequest;
+use App\Models\PrivateDocument;
+use Illuminate\Http\Request;
 
 class AdministationDocumentsController extends Controller
 {
@@ -15,7 +17,6 @@ class AdministationDocumentsController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -45,8 +46,15 @@ class AdministationDocumentsController extends Controller
      * @param  \App\Models\administation_documents  $administation_documents
      * @return \Illuminate\Http\Response
      */
-    public function show(administation_documents $administation_documents)
+    public function show($id)
     {
+        return view(
+            'layouts.pengajuan.detail',
+            [
+                "data" => administation_documents::where("id", $id)->get(),
+                "data_private" => PrivateDocument::where("id_user", $id)->get(),
+            ]
+        );
         //
     }
 

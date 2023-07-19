@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PrivateDocument;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,5 +35,14 @@ class ApiLoginController extends Controller
         } else {
             return response("token expired", 402);
         }
+    }
+
+    public function account($id)
+    {
+        return [
+            "data" => User::where("id", $id)->get(),
+            "private_document"  => PrivateDocument::where("id_user", $id)->get()
+
+        ];
     }
 }

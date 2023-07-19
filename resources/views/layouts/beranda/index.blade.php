@@ -41,136 +41,19 @@
                 </tr>
             </thead>
             <tbody style="border-top: none">
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Testing</td>
-                    <td>4/5</td>
-                    <td>Pembuatan surat pengantar ke instansi tertentu</td>
-                    <td>23 Oct 2022</td>
-                    <td>
-                        <a href="/beranda"
-                            style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
-                    </td>
-                </tr>
+                @foreach ($data_document as $item)
+                    <tr>
+                        <td scope="row">{{ $item->title }}</td>
+                        <td>4/5</td>
+                        <td style="max-lines: 1; text-overflow:ellipsis">{{ $item->description }}</td>
+                        <td style="max-lines: 1; text-overflow:ellipsis">{{ $item->created_at->diffForHumans() }}</td>
+                        <td>
+                            <a href="/pengajuan/{{ $item->id }}"
+                                style="color:#3AB7D7; font-family:Georgia, 'Times New Roman', Times, serif">View</a>
+                        </td>
+                    </tr>
+                @endforeach
+
             </tbody>
         </table>
 
@@ -193,7 +76,7 @@
                             alt="img" height="50px" width="50px" style="object-fit: cover">
                     </div>
                     <div class="col-9 m-0 p-0 mt-2">
-                        <div class="text-title">{{ $item["user"][0]->name }}</div>
+                        <div class="text-title">{{ $item['user'][0]->name }}</div>
                         <div class="text-description">Sudah melakukan pembayaran tetapi transaksi belum juga diprosestapi
                             transaksi
                             belum juga diprosestapi transaksi belum juga diprosestapi transaksi belum juga diproses</div>

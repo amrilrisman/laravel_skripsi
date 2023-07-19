@@ -11,7 +11,8 @@ class PrivateDocument extends Model
 
     protected $guarded = ['id'];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }

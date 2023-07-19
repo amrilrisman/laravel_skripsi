@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\administation_documents;
 use Illuminate\Http\Request;
 
 class DocumentController extends Controller
@@ -13,7 +13,9 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        return view('layouts.pengajuan.index');
+        return view('layouts.pengajuan.index', [
+            "data" => administation_documents::latest()->get()
+        ]);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\administation_documents;
 use App\Models\chats;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,10 +17,11 @@ class BerandaController extends Controller
     public function index()
     {
         return view('layouts.beranda.index', [
+            "data_document" => administation_documents::latest()->get(),
             "data_chat" => [
                 [
                     "user" => User::where('id', 1)->get(),
-                    "chats" => chats::where('id_user', 1)->get(), 
+                    "chats" => chats::where('id_user', 1)->get(),
                 ],
                 [
                     "user" => User::where('id', 2)->get(),
